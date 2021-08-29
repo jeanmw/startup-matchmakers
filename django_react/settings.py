@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'connections.apps.ConnectionsConfig',
     'founders.apps.FoundersConfig',
     'investors.apps.InvestorsConfig',
+    'messaging.apps.MessagingConfig',
     'rest_framework',
     'frontend',
 ]
