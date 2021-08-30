@@ -31,17 +31,39 @@ class App extends Component {
       });
   }
 
+  renderMessages(messages) {
+    if(messages.length === 0) {
+      return null
+    } else {
+      return (
+        <div>
+          {messages.map(message => {
+            return(
+              <div id={message.id}>
+                <p>{message.body}</p>
+                <p>{message.sender_name}</p>
+              </div>
+            )
+          })}
+        </div>
+      )
+    }
+  }
+
   render() {
     return (
-      <ul>
+      <div>
         {this.state.data.map(connection => {
           return (
-            <li key={connection.id}>
-              {connection.name}
-            </li>
+            <div>
+              <p key={connection.id}>
+                {connection.name}
+              </p>
+              {this.renderMessages(connection.messages)}
+            </div>
           );
         })}
-      </ul>
+      </div>
     );
   }
 }

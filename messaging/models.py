@@ -15,3 +15,6 @@ class Message(models.Model):
 
     def connection_name(self):
         return str(self.connection_id.name)
+
+    def sender_name(self):
+        return self.content_sender.name
